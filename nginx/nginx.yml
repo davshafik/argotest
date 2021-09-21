@@ -17,6 +17,6 @@ spec:
       - name: nginx
         image: nginx:1.14.2
       imagePullSecrets:
-        - name: docker
+      - name: docker
         ports:
         - containerPort: 80
