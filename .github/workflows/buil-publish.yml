@@ -1,0 +1,24 @@
+on: [push]
+
+jobs:
+  hello_world_job:
+    runs-on: ubuntu-latest
+    name: A job to  build and publish docker images
+    steps:
+      # To use this repository's private action,
+      # you must check out the repository
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Hello world action step
+        uses: actions/hello-world-action@v1
+        id: docker-build-push
+        with:
+          registery: 'napoleongames.jfrog.io'
+          docker_repo: 'docker/davtest'
+          img-ver: 'beta-test'
+          reg-username: ${{secrets.JFROG_USERNAME }}
+          reg-password: ${{secrets.JFROG_PASSWORD }}
+
+      # Use the output from the `hello` step
+      - name: Get the output times
+        run: echo "The image name is  ${{ steps.docker-build-push.outputs.image-name }}"
