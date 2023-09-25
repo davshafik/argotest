@@ -10,7 +10,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
       - name: Hello world action step
-        uses: davshafik/hello-world-action
+        uses: davshafik/hello-world-action@v3
         id: docker-build-push
         with:
           registery: 'napoleongames.jfrog.io'
