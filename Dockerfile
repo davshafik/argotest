@@ -1,5 +1,5 @@
 FROM alpine:latest
 
-RUN apk add wget curl docker
+RUN apk add wget
 
 CMD ["wget","--help"]
