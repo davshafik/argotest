@@ -9,16 +9,5 @@ jobs:
       # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Hello world action step
-        uses: davshafik/hello-world-action@v3.0.0
-        id: docker-build-push
-        with:
-          registery: 'napoleongames.jfrog.io'
-          docker_repo: 'docker/davtest'
-          img-ver: 'beta-test'
-          reg-username: ${{secrets.JFROG_USERNAME }}
-          reg-password: ${{secrets.JFROG_PASSWORD }}
-
-      # Use the output from the `hello` step
       - name: Get the output times
-        run: echo "The image name is  ${{ steps.docker-build-push.outputs.image-name }}"
+        run: echo "The image name is not cool"
